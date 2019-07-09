@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "webpack --config webpack.spec.ts --progress --color && karma start",
-    "start": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src"
+    "start": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "",
   "license": "ISC",
@@ -21,7 +23,8 @@
     "core-js": "^2.4.1",
     "lodash": "^4.16.1",
     "rxjs": "^5.0.0-beta.12",
-    "zone.js": "^0.6.25"
+    "zone.js": "^0.6.25",
+    "snyk": "^1.192.4"
   },
   "devDependencies": {
     "@types/core-js": "^0.9.33",
@@ -40,5 +43,6 @@
     "typescript": "^2.0.2",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
-  }
+  },
+  "snyk": true
 }
